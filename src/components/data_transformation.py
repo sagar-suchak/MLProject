@@ -69,7 +69,7 @@ class data_transformation:
         
 
 
-    def initiate_data_transformmation(self, train_path, test_path):
+    def initiate_data_transformation(self, train_path, test_path):
 
         try:
             train_df = pd.read_csv(train_path)
@@ -108,6 +108,11 @@ class data_transformation:
             preprocessor_obj
             )
 
+            return (
+                train_arr,
+                test_arr,
+                self.data_transformation_config.preprocessor_obj_file_path,
+            )
 
         except Exception as e:
             raise custom_exception(e,sys)
